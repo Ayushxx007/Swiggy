@@ -2,6 +2,7 @@ import  {useEffect,useState} from "react";
 import Shimmer from "./Shimmer.jsx";
 import {useParams} from  "react-router-dom";
 import {MENU_API} from "../utils/constants.js";
+import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
 
 
 
@@ -37,11 +38,15 @@ const RestaurantMenu = () => {
     { /*   const  {itemCards}=resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card ;
      console.log(itemCards); */ }
 
-    const {name,id,city,costForTwo,cuisines,avgRating}=resInfo?.data?.cards[2]?.card?.card?.info;
+    const {name,id,city,costForTwo,cuisines,avgRating,cloudinaryImageId,locality}=resInfo?.data?.cards[2]?.card?.card?.info;
+
+    const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
   
   return (
     <div id="resInfo">
+
+      <img src={imageUrl}></img>
 
         <h1> name :{ name} </h1>
         
@@ -50,6 +55,7 @@ const RestaurantMenu = () => {
         <h3> cost for two: Rs {costForTwo/100}</h3>
         <h3>cusines :{cuisines.join(", ")}</h3>
         <h3>rating :{avgRating}</h3>
+        <h4>{locality}</h4>
 
     
        { /*  <h4>   {itemCards.map((ele)=>{return  <li key={ele?.card?.info?.id}>{ ele?.card?.info?.name} - ₨ {ele?.card?.info?.price/100}</li>}) } </h4> */ }

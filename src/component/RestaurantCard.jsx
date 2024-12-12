@@ -1,11 +1,13 @@
 import LOGO_URL from "../utils/constants.js";
+import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
+
 
 const RestaurantCard = (props) => {
 
   let {obx}=props;
-  let{id,name,costForTwo,cuisines,avgRating,cloudinaryImageId}=obx.info;
+  let{name,costForTwo,cuisines,avgRating,cloudinaryImageId}=obx.info;
 
-  const CLOUDINARY_BASE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
 
 // Construct the full URL for the image
 const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;

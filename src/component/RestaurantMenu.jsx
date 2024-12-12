@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
     { /*   const  {itemCards}=resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card ;
      console.log(itemCards); */ }
 
-    const {name,id,city,costForTwo,cuisines,avgRating,cloudinaryImageId}=resInfo?.data?.cards[2]?.card?.card?.info;
+    const {name,id,city,costForTwo,cuisines,avgRating}=resInfo?.data?.cards[2]?.card?.card?.info;
 
   
   return (

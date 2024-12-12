@@ -2,21 +2,25 @@ import LOGO_URL from "../utils/constants.js";
 
 const RestaurantCard = (props) => {
 
-    let {obx}=props;
-    let{res,cuisine,rating,time,image}=obx;
+  let {obx}=props;
+  let{id,name,costForTwo,cuisines,avgRating,cloudinaryImageId}=obx.info;
 
+  const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/demo/image/upload/";
+
+// Construct the full URL for the image
+const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
 
 
   return (
     <div id="containerx">
 
-        <img src={image}></img>
-        <h3 id="title">{res}</h3>
-        <p id="description">{cuisine}</p>
+        <img src={imageUrl}></img>
+        <h3 id="title">{name}</h3>
+        <p id="description">{cuisines}</p>
         <div id="xyz">
-            <div>{rating}</div>
-            <div>{time} </div>
+            <div>{avgRating}</div>
+            <div>{costForTwo} </div>
 
         </div>
 

@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard.jsx"
 import Shimmer from "./Shimmer.jsx"
 import {useState,useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const Body = () => {
 
@@ -12,6 +13,7 @@ const Body = () => {
     useEffect(()=>{
         console.log("mahika");
         fetchData();
+      
     },[]);
 
     console.log("ganduka");
@@ -56,7 +58,18 @@ const Body = () => {
 
       <div id="rescard">
 
-     { filteredRestaurants.map(rest=> <RestaurantCard key ={rest.res} obx={rest}/>)};
+     { filteredRestaurants.map(rest=>( 
+
+
+       
+
+      <RestaurantCard key ={rest.res} obx={rest}/>
+
+   
+      
+      )
+      
+      )};
 
 
      

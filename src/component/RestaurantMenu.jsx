@@ -47,7 +47,7 @@ const RestaurantMenu = () => {
         
         <h2> id: {id}</h2>
         <h3>city: {city}</h3>
-        <h3> cost for two: {costForTwo}</h3>
+        <h3> cost for two: Rs {costForTwo/100}</h3>
         <h3>cusines :{cuisines.join(", ")}</h3>
         <h3>rating :{avgRating}</h3>
 

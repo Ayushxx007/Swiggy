@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard.jsx"
 import Shimmer from "./Shimmer.jsx"
 import {useState,useEffect} from "react";
 import {Link} from "react-router-dom";
+import {useOnlineStatus} from "../utils/useOnlineStatus.js";
+
 
 const Body = () => {
 
@@ -11,22 +13,32 @@ const Body = () => {
 
 
     useEffect(()=>{
-        console.log("mahika");
-        fetchData();
+      fetchData();
       
     },[]);
 
-    console.log("ganduka");
+   
 
     const fetchData=async()=>{   
 
        let data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
        let response=await data.json();
        const restaurants= response?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+
        setRestaurants(restaurants);
-       console.log(restaurants);
+    setFilteredRestaurants(restaurants);
+
+
+    };
+
+    const onlineStatus=useOnlineStatus();
+
+    if(onlineStatus===false){
       
-       setFilteredRestaurants(restaurants);
+
+      return <h1>Looks like you are offline please check your interent connection</h1>
+
 
     }
 
@@ -35,9 +47,6 @@ const Body = () => {
 
         return <Shimmer/>
     }
-
-
-
 
 
   return (

@@ -26,10 +26,6 @@ const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
         </div>
 
-
-
-
-
     </div>
   )
 }

@@ -20,8 +20,6 @@ class UserClass extends React.Component{
 
         }
   
-
-
     }
 
    async componentDidMount(){
@@ -93,5 +91,5 @@ class UserClass extends React.Component{
 export default UserClass;
 
 
-//! constructor==>render()==>componentDidMount=>apicall (change in state variable)==>render()=>componentDidUpdate
+//! constructor==>render()==>componentDidMount=>apicall (change in state variable)==>render()=>componentDidUpdaterender()=>componentDidUpdaterender()=>componentDidUpdate
 //& before unmounting ==> componentWillUnmount

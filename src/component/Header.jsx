@@ -9,22 +9,26 @@ const Header = () => {
 
 
   return (
-    <div id="header">
+
+
+    <div id="header" className="flex justify-between items-center bg-[#f0f0f0]">
+
+
 
        <div id ="logo">
 
-       <img src={LOGO_URL}></img>
+       <img src={LOGO_URL} className="object-cover m-[5px] w-[120px] h-[120px] rounded-[10%] max-w-[100%]"></img>
 
        </div>
        <div id="navItems">
-        <ul>
+        <ul className="flex m-[10px] list-none">
 
-            <li>Online Status:{onlineStatus?"🟢":"🔴"}</li>
-            <li><Link to= "/">Home</Link></li>
-            <li><Link to ="/about">About us</Link> </li>
-            <li><Link to ="/contact">Contact us</Link> </li>
-            <li><Link to ="/grocery">Grocery</Link></li>
-            <li><Link>mahika</Link></li>
+            <li className="m-[10px] no-underline">Online Status:{onlineStatus?"🟢":"🔴"}</li>
+            <li className="m-[10px] no-underline"><Link to= "/">Home</Link></li>
+            <li className="m-[10px] no-underline"><Link to ="/about">About us</Link> </li>
+            <li className="m-[10px] no-underline"><Link to ="/contact">Contact us</Link> </li>
+            <li className="m-[10px] no-underline"><Link to ="/grocery">Grocery</Link></li>
+            <li className="m-[10px] no-underline"><Link>mahika</Link></li>
 
         </ul>
 

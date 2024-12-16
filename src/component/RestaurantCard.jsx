@@ -15,14 +15,14 @@ const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
 
   return (
-    <div id="containerx">
+    <div className="flex flex-col items-center rounded-[20px] m-[15px] border-2 border-black h-[35vh] w-[12vw]" id="containerx">
 
-        <img src={imageUrl}></img>
+        <img src={imageUrl} className="object-cover m-[5px] w-[120px] h-[120px] rounded-[10%] max-w-[100%]"></img>
         <h3 id="title">{name}</h3>
         <p id="description">{cuisines}</p>
-        <div id="xyz">
-            <div>{avgRating}</div>
-            <div>{costForTwo} </div>
+        <div className="w-[100%] flex flex-row justify-between items-center" id="xyz">
+            <div className="m-[5px]">{avgRating}</div>
+            <div className="m-[5px]" >{costForTwo} </div>
 
         </div>
 

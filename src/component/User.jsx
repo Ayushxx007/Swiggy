@@ -9,7 +9,7 @@ const User = (props) => {
 
 
   return (
-    <div className="user-card">
+    <div  className="user-card p-[20px] m-[20px] rounded-[10px] bg-[#f0f0f0] border-[2px] border-solid border-black w-auto h-auto">
 
         <button onClick={()=>{setStateVariable(stateVariable+1)}}>click me functional component</button>
         <h2>{stateVariable}</h2>

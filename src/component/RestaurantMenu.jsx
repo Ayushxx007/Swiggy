@@ -26,10 +26,10 @@ const resInfo=useRestaurantMenu(resId);
 
   
   return (
-    <div id="resInfo">
+    <div className="p-[20px]" id="resInfo">
 
 
-        <img src={imageUrl}></img>
+        <img className="object-cover m-[5px] w-[120px] h-[120px] rounded-[10%] max-w-[100%]" src={imageUrl}></img>
         <h1> name :{ name} </h1>
         <h2> id: {id}</h2>
         <h3>city: {city}</h3>

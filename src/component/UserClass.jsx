@@ -63,7 +63,7 @@ class UserClass extends React.Component{
 
       return ( 
         
-        <div className="ClassUser-card">
+        <div className="ClassUser-card p-[20px] m-[20px] rounded-[10px] bg-[#f0f0f0] border-[2px] border-solid border-black w-auto h-auto">
 
             <button onClick={()=>{
                 this.setState({

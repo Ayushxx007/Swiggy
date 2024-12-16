@@ -52,13 +52,13 @@ const Body = () => {
   return (
     <div id="body">
 
-        <div id="body1">
-            <input type="text" placeholder="search"  value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}></input>
-            <button onClick={()=>{const filteredRestaurant=listOfRestaurants.filter((restaurant)=>{ return restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())});
+        <div id="body1" className="p-[10px] m-[10px]">
+            <input className="p-[10px] m-[10px] rounded-[10px] border border-black " type="text" placeholder="search"  value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}></input>
+            <button className="p-[10px] m-[10px] rounded-[10px] border border-black hover:bg-[#f0f0f0] " onClick={()=>{const filteredRestaurant=listOfRestaurants.filter((restaurant)=>{ return restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())});
             setFilteredRestaurants(filteredRestaurant);}}>Search</button>
 
 
-            <button onClick={ ()=>{
+            <button className="p-[10px] m-[10px] rounded-[10px] border 1 border-black hover:bg-[#f0f0f0]" onClick={ ()=>{
                 const xyz=listOfRestaurants.filter(res=> res.info.avgRating>4);
                 setFilteredRestaurants(xyz);
             }
@@ -69,7 +69,7 @@ const Body = () => {
         </div>
 
 
-      <div id="rescard">
+      <div className="flex flex-wrap flex-row" id="rescard">
 
      { filteredRestaurants.map(rest=>( 
 

@@ -21,9 +21,11 @@ const resInfo=useRestaurantMenu(resId);
      console.log(itemCards); */ }
 
     const {name,id,city,costForTwo,cuisines,avgRating,cloudinaryImageId,locality}=resInfo?.data?.cards[2]?.card?.card?.info;
+    //resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 
     const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
+    console.log(resInfo);
   
   return (
     <div className="p-[20px]" id="resInfo">

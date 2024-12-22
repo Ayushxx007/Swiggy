@@ -15,8 +15,6 @@ class About extends React.Component{
   }
 
 
-
-
 render(){
 
 
@@ -37,16 +35,10 @@ render(){
 
 
 
-
-
   }
 
 
-
-
 }
-
-
 
 
 

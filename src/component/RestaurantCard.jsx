@@ -30,4 +30,62 @@ const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
   )
 }
 
-export default RestaurantCard
+export const EnhancedCard=(RestaurantCard)=>{
+
+  return (props)=>{
+
+    let {obx}=props;
+    let{name,costForTwo,cuisines,avgRating,cloudinaryImageId}=obx.info;
+
+
+
+    return (
+
+      <div>
+
+        <label className="absolute bg-black text-white m-1 p-0.5 rounded-md ">Promoted</label>
+        <RestaurantCard {...props}/>
+
+
+      
+      </div>
+
+
+
+
+
+    )
+
+
+
+    
+
+  
+
+
+
+
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+export default RestaurantCard;
+
+
+
+//Higher order Component (<RestaurantCard/>)==> <Enhahnced RestaurantCard/>
+
+// A Higher-Order Component (HOC) in React is an advanced pattern for reusing component logic.
+//  It’s a function that takes a component as an argument and returns a new component with enhanced functionality.

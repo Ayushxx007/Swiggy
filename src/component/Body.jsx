@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard.jsx"
+import RestaurantCard,{EnhancedCard} from "./RestaurantCard.jsx"
 import Shimmer from "./Shimmer.jsx"
 import {useState,useEffect} from "react";
 import {Link} from "react-router-dom";
@@ -10,6 +10,10 @@ const Body = () => {
     const [listOfRestaurants, setRestaurants] = useState([]);
     const[filteredRestaurants,setFilteredRestaurants]=useState([]);
     const [searchText,setSearchText]=useState("");
+
+      const EnhancedRestaurantCard=EnhancedCard(RestaurantCard);
+
+    console.log(listOfRestaurants);
 
 
     useEffect(()=>{
@@ -31,6 +35,8 @@ const Body = () => {
 
 
     };
+  
+
 
     const onlineStatus=useOnlineStatus();
 
@@ -71,20 +77,16 @@ const Body = () => {
 
       <div className="flex flex-wrap flex-row" id="rescard">
 
-     { filteredRestaurants.map(rest=>( 
+      {filteredRestaurants.map(rest => (
+  <Link key={rest.info.id} to={"/city/jaipur/" + rest.info.id}>
+    {rest.info.name === "Chinese Wok" ? (
+      <EnhancedRestaurantCard obx={rest} />
+    ) : (
+      <RestaurantCard obx={rest} />
+    )}
+  </Link>
+))}
 
-
-     <Link   key ={rest.info.id} to={"/city/jaipur/"+rest.info.id}>
-
-      <RestaurantCard obx={rest}/>
-
-      </Link>
-
-     
-      
-      )
-      
-      )};
 
 
      

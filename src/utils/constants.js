@@ -7,3 +7,4 @@ export default LOGO_URL;
 
 export const MENU_API=  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=";
 
+export const CDN_URL="https://res.cloudinary.com/swiggy/image/uplpad/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";

@@ -14,6 +14,7 @@ const Body = () => {
       const EnhancedRestaurantCard=EnhancedCard(RestaurantCard);
 
     console.log(listOfRestaurants);
+    console.log(filteredRestaurants);
 
 
     useEffect(()=>{
@@ -79,7 +80,7 @@ const Body = () => {
 
       {filteredRestaurants.map(rest => (
   <Link key={rest.info.id} to={"/city/jaipur/" + rest.info.id}>
-    {rest.info.name === "Chinese Wok" ? (
+    {rest.info.name === "Subway" ? (
       <EnhancedRestaurantCard obx={rest} />
     ) : (
       <RestaurantCard obx={rest} />

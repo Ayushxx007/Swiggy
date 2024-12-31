@@ -2,7 +2,7 @@ import {CDN_URL} from "../utils/constants.js"
 import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
 const Items = ({items}) => {
 
-    console.log(items);
+   
   return (
 
     <div>
@@ -35,27 +35,10 @@ const Items = ({items}) => {
 )}
 
 
-
         </ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
 
   )
 }

@@ -24,11 +24,11 @@ const resInfo=useRestaurantMenu(resId);
     //resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 
     const categories=resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(c=>c.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log(categories);
+   
 
     const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
 
-    console.log(resInfo);
+    
   
   return (
     <div className="p-[20px] text-center" id="resInfo">

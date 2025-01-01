@@ -7,6 +7,8 @@ import About from "./component/About.jsx";
 import Contact from "./component/Contact.jsx";
 import Error from "./component/Error.jsx";
 import  RestaurantMenu from "./component/RestaurantMenu.jsx";
+import {useState,useEffect} from "react";
+import UserContext from "./utils/UserContext.js";
 //import Grocery from "./component/Grocery.jsx";       
 
 const Grocery=lazy(()=>import("./component/Grocery.jsx"));  // chunking,code Splitting, Dynamic Bundling, Lazy Loading, on Demand Loading
@@ -14,7 +16,22 @@ const Grocery=lazy(()=>import("./component/Grocery.jsx"));  // chunking,code Spl
 
 const AppLayout=()=>{
 
+    //authentication
+    const[userInfo,setUserInfo]=useState();
+
+    useEffect(()=>{
+
+        //make an api call
+        const data={
+            name:"mahika"
+        }
+
+        setUserInfo(data.name);
+
+    },[])
+
     return (
+        <UserContext.Provider value={{loggedInUser:userInfo}}>
 
         <div id="ApplayOut">
 
@@ -23,6 +40,7 @@ const AppLayout=()=>{
         <Outlet/>
 
         </div>
+        </UserContext.Provider>
      
     )
 

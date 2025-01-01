@@ -1,19 +1,17 @@
 import Items from "./Items.jsx";
 import { useState } from "react";
 
-const RestaurantDetail = ({data}) => {
+const RestaurantDetail = ({data,showItems,setShowIndex,dummy}) => {
 
-  const [showItems,setShowItems]=useState(false);
+ // const [showItems,setShowItems]=useState(false);
 
   const handleClick=()=>{
 
-    setShowItems(!showItems);
+ setShowIndex();
     
 
-
   }
-
-
+  
 
 
   return (
@@ -27,7 +25,7 @@ const RestaurantDetail = ({data}) => {
         </div>
 
         {
-          showItems &&  <Items items={data.itemCards}/>
+          showItems &&  <Items dummy={dummy} items={data.itemCards}/>
 
 
         }

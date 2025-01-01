@@ -1,6 +1,8 @@
 import {CDN_URL} from "../utils/constants.js"
 import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
-const Items = ({items}) => {
+const Items = ({items,dummy}) => {
+
+  console.log(dummy);
 
    
   return (
@@ -25,7 +27,10 @@ const Items = ({items}) => {
         </p>
 
         </div>
+        <div>
         <img className="object-cover m-[5px] w-[120px] h-[120px] rounded-[10%] max-w-[100%]" src={CLOUDINARY_BASE_URL+item.card.info.imageId}></img>
+        <button className=" rounded-md relative bottom-7 left-2 bg-[grey] text-white p-1 m-1">+Add</button>
+        </div>
         
 
 
@@ -44,3 +49,5 @@ const Items = ({items}) => {
 }
 
 export default Items;
+
+// props drilling is the problem and the solution is Context api

@@ -4,6 +4,7 @@ import {useParams} from  "react-router-dom";
 import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
 import {useRestaurantMenu} from "../utils/useRestaurantMenu.js";
 import RestaurantDetail from "./RestaurantDetail.jsx";
+import {useState} from "react";
 
 
 
@@ -12,6 +13,9 @@ const RestaurantMenu = () => {
     
  const {resId}=useParams();
 const resInfo=useRestaurantMenu(resId);
+const [showIndex,setShowIndex]=useState(null);
+
+const dummy="dummy data";
  
 
     if(resInfo===null){ return <Shimmer/> }
@@ -64,7 +68,7 @@ const resInfo=useRestaurantMenu(resId);
 
 
 
-{categories.map((c)=>{ return <RestaurantDetail key={c?.card?.card.title} data={c?.card?.card}/>})}
+{categories.map((c,index)=>{ return <RestaurantDetail dummy={dummy} setShowIndex={()=>{setShowIndex(index)}} showItems={index===showIndex?true:false} key={c?.card?.card.title} data={c?.card?.card}/>})}
 
 
 

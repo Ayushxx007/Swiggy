@@ -1,11 +1,15 @@
 import LOGO_URL from "../utils/constants.js";
 import {CLOUDINARY_BASE_URL} from "../utils/constants.js";
+import UserContext from "../utils/UserContext.js";
+import {useContext} from "react";
 
 
 const RestaurantCard = (props) => {
 
   let {obx}=props;
   let{name,costForTwo,cuisines,avgRating,cloudinaryImageId}=obx.info;
+
+  const {loggedInUser}=useContext(UserContext);
 
 
 
@@ -25,6 +29,7 @@ const imageUrl = `${CLOUDINARY_BASE_URL+cloudinaryImageId}`;
             <div className="m-[5px]" >{costForTwo} </div>
 
         </div>
+        <div>{loggedInUser}</div>
 
     </div>
   )

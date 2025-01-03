@@ -9,6 +9,10 @@ import Error from "./component/Error.jsx";
 import  RestaurantMenu from "./component/RestaurantMenu.jsx";
 import {useState,useEffect} from "react";
 import UserContext from "./utils/UserContext.js";
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore.js";
+import  Cart from "./component/Cart.jsx";
+
 //import Grocery from "./component/Grocery.jsx";       
 
 const Grocery=lazy(()=>import("./component/Grocery.jsx"));  // chunking,code Splitting, Dynamic Bundling, Lazy Loading, on Demand Loading
@@ -31,6 +35,7 @@ const AppLayout=()=>{
     },[])
 
     return (
+       <Provider store={appStore}>
         <UserContext.Provider value={{loggedInUser:userInfo}}>
 
         <div id="ApplayOut">
@@ -41,6 +46,7 @@ const AppLayout=()=>{
 
         </div>
         </UserContext.Provider>
+        </Provider>
      
     )
 
@@ -83,6 +89,12 @@ const appRouter=createBrowserRouter([
         {
             path:"/grocery",
             element:  <Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
+
+
+        },
+        {
+            path:"/cart",
+            element:<Cart/>
 
 
         }
